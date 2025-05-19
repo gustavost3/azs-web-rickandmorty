@@ -61,40 +61,43 @@ const AllEpisodes = () => {
     const totalPages = data?.episodes?.info?.pages || 0;
 
     return (
-        <div className="wrapper">
-            <div className="container">
-                <h1>Todos os Episódios</h1>
-                <SearchBar onSearch={handleSearch} />
+        <>
+            <div className="wrapper">
+                <div className="container">
+                    <h1>Todos os Episódios</h1>
+                    <SearchBar onSearch={handleSearch} />
 
-                <div className="episode-list">
-                    {data?.episodes?.results.map((episode) => (
-                        <EpisodeCard key={episode.id} episode={episode} />
-                    ))}
-                </div>
-
-                <div className="pagination">
-                    <button
-                        className="pagination-button"
-                        onClick={handlePrevPage}
-                        disabled={!data?.episodes?.info?.prev}
-                    >
-                        Anterior
-                    </button>
-
-                    <div className="pagination-info">
-                        Página {currentPage} de {totalPages}
+                    <div className="episode-list">
+                        {data?.episodes?.results.map((episode) => (
+                            <EpisodeCard key={episode.id} episode={episode} />
+                        ))}
                     </div>
 
-                    <button
-                        className="pagination-button"
-                        onClick={handleNextPage}
-                        disabled={!data?.episodes?.info?.next}
-                    >
-                        Próxima
-                    </button>
+                    <div className="pagination">
+                        <button
+                            className="pagination-button"
+                            onClick={handlePrevPage}
+                            disabled={!data?.episodes?.info?.prev}
+                        >
+                            Anterior
+                        </button>
+
+                        <div className="pagination-info">
+                            Página {currentPage} de {totalPages}
+                        </div>
+
+                        <button
+                            className="pagination-button"
+                            onClick={handleNextPage}
+                            disabled={!data?.episodes?.info?.next}
+                        >
+                            Próxima
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
+
     );
 };
 

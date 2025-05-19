@@ -3,7 +3,7 @@
     border-radius: 8px;
     padding: 1rem;
     margin-bottom: 1rem;
-    background-color: white;
+    background-color: rgba(40, 40, 40, 0.6);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
@@ -16,7 +16,7 @@
 
 .episode-title {
     margin: 0 0 0.5rem 0;
-    color: #333;
+    color: #fff;
 }
 
 .episode-link {
