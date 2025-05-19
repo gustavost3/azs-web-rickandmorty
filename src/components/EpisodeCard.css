@@ -1,5 +1,9 @@
+:root {
+    --primary-color: #97ce4c;
+    --portal-blue: #24c0eb;
+}
+
 .card {
-    border: 1px solid #ddd;
     border-radius: 8px;
     padding: 1rem;
     margin-bottom: 1rem;
@@ -8,10 +12,31 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+
 }
+
+.card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 8px;
+    height: 100%;
+    background: linear-gradient(0deg, var(--primary-color), var(--portal-blue));
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(59, 203, 255, 0.3);
+}
+
 
 .episode-info {
     flex: 1;
+    margin-left: 8px;
 }
 
 .episode-title {

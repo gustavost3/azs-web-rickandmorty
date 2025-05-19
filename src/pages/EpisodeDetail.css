@@ -3,7 +3,8 @@
     position: relative;
     background-image: url('/public/rick.svg');
     background-repeat: no-repeat;
-    background-position: bottom right;
+    background-position: top right;
+    top: 15px;
 
 }
 
@@ -30,7 +31,7 @@
     margin: 0.5rem 0;
     color: #666;
     font-size: 1.1rem;
-   
+
 }
 
 .characters-grid {

@@ -1,50 +1,105 @@
+@import '../styles/variables.css';
+
 .character-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    background: rgba(26, 26, 26, 0.8);
+    border-radius: var(--border-radius-lg);
     overflow: hidden;
-    margin-bottom: 1rem;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    position: relative;
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(151, 206, 76, 0.2);
+}
+
+.character-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(59, 203, 255, 0.3);
+}
+
+.character-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--portal-blue));
+    z-index: 1;
 }
 
 .character-image {
     width: 100%;
-    height: 200px;
+    height: 250px;
     object-fit: cover;
+    transition: transform var(--transition-normal);
+}
+
+.character-card:hover .character-image {
+    transform: scale(1.05);
 }
 
 .character-info {
-    padding: 1rem;
+    padding: var(--spacing-md);
 }
 
 .character-name {
-    margin: 0 0 0.5rem 0;
-    color: #333;
+    font-size: 1.4rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-color);
 }
 
-.character-details {
-    margin: 0.25rem 0;
-    color: #666;
+.character-status {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-xs);
 }
 
 .status-indicator {
-    display: inline-block;
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    margin-right: 5px;
+    margin-right: var(--spacing-xs);
 }
 
-.status-indicator.alive {
-    background-color: green;
+.status-alive {
+    background-color: var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color);
 }
 
-.status-indicator.dead {
-    background-color: red;
+.status-dead {
+    background-color: #ff5757;
+    box-shadow: 0 0 5px #ff5757;
 }
 
-.status-indicator.unknown {
-    background-color: gray;
+.status-unknown {
+    background-color: #cccccc;
+}
+
+.character-species,
+.character-location {
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.character-location {
+    color: var(--accent-color);
+}
+
+.character-details-btn {
+    margin-top: var(--spacing-md);
+    width: 100%;
+    padding: var(--spacing-sm);
+    background: linear-gradient(90deg, var(--primary-color), var(--portal-blue));
+    border: none;
+    border-radius: var(--border-radius-md);
+    color: var(--text-dark);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.character-details-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(151, 206, 76, 0.5);
 }
