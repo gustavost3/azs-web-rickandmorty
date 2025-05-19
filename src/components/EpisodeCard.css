@@ -1,0 +1,70 @@
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.episode-info {
+    flex: 1;
+}
+
+.episode-title {
+    margin: 0 0 0.5rem 0;
+    color: #333;
+}
+
+.episode-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.episode-details {
+    margin: 0.25rem 0;
+    color: #666;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.favorite-button,
+.watched-button {
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+}
+
+.favorite-button:hover,
+.watched-button:hover {
+    background-color: #e0e0e0;
+}
+
+.favorite-button.active {
+    background-color: #f8d568;
+}
+
+.favorite-button.active:hover {
+    background-color: #f5c542;
+}
+
+.watched-button.active {
+    background-color: #6ecf6e;
+}
+
+.watched-button.active:hover {
+    background-color: #5bb85b;
+}

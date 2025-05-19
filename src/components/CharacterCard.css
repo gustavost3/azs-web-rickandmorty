@@ -1,0 +1,50 @@
+.character-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.character-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.character-info {
+    padding: 1rem;
+}
+
+.character-name {
+    margin: 0 0 0.5rem 0;
+    color: #333;
+}
+
+.character-details {
+    margin: 0.25rem 0;
+    color: #666;
+}
+
+.status-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.status-indicator.alive {
+    background-color: green;
+}
+
+.status-indicator.dead {
+    background-color: red;
+}
+
+.status-indicator.unknown {
+    background-color: gray;
+}

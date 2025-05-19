@@ -4,6 +4,7 @@ import { ApolloProvider } from "@apollo/client";
 import { EpisodeProvider } from "./contexts/EpisodeContext";
 import client from "./apollo-client";
 import Header from "./components/Header";
+import AllEpisodes from "./pages/AllEpisodes";
 import "./App.css";
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
         <Router>
           <Header />
           <Routes>
-            
+            <Route path="/" element={<AllEpisodes />} />
           </Routes>
         </Router>
       </EpisodeProvider>
