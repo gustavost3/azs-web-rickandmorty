@@ -31,6 +31,8 @@ rick-and-morty-app/
 |   |    ├──EpisodeDetail.js
 |   |    ├──FavoriteEpisodes.css
 |   |    ├──FavoriteEpisodes.js
+│   ├── styles/         # Declaraçao de variaveis de estilo globais
+|   |    ├──variables.css
 │   ├── App.js          # Componente principal
 │   ├── App.css         # Estilos globais
 │   ├── apollo-client.js # Configuração do Apollo Client
@@ -108,10 +110,6 @@ Contribuições são bem-vindas! Para contribuir:
 3. Faça commit das suas alterações (`git commit -m 'Adiciona nova funcionalidade'`)
 4. Faça push para a branch (`git push origin feature/nova-funcionalidade`)
 5. Abra um Pull Request
-
-## Licença
-
-Este projeto está licenciado sob a licença MIT - veja o arquivo LICENSE para mais detalhes.
 
 ## Contato
 
