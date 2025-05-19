@@ -1,0 +1,111 @@
+.wrapper {
+    background-color: #141414;
+    position: relative;
+    min-height: 100vh;
+    z-index: -2;
+}
+
+.wrapper::after {
+    content: "";
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    /* Ajuste o tamanho conforme necessário */
+    height: 300px;
+    /* Ajuste o tamanho conforme necessário */
+    background-image: url('/public/rick.svg');
+    /* Substitua pelo caminho da sua imagem */
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom right;
+    z-index: -1;
+    pointer-events: none;
+
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.episode-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.episode-title {
+    margin: 0 0 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.episode-info {
+    margin: 0.5rem 0;
+    color: #666;
+    font-size: 1.1rem;
+   
+}
+
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.action-button {
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #f0f0f0;
+}
+
+.action-button:hover {
+    background-color: #e0e0e0;
+}
+
+.action-button.favorite-active {
+    background-color: #f8d568;
+}
+
+.action-button.favorite-active:hover {
+    background-color: #f5c542;
+}
+
+.action-button.watched-active {
+    background-color: #6ecf6e;
+}
+
+.action-button.watched-active:hover {
+    background-color: #5bb85b;
+}
+
+.button-container {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.loading-message {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.error-message {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: #e74c3c;
+    background-color: #fdeaea;
+    border-radius: 4px;
+}

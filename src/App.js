@@ -5,6 +5,7 @@ import { EpisodeProvider } from "./contexts/EpisodeContext";
 import client from "./apollo-client";
 import Header from "./components/Header";
 import AllEpisodes from "./pages/AllEpisodes";
+import EpisodeDetail from "./pages/EpisodeDetail";
 import "./App.css";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<AllEpisodes />} />
+            <Route path="/episode/:id" element={<EpisodeDetail />} />
           </Routes>
         </Router>
       </EpisodeProvider>
