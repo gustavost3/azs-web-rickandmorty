@@ -6,6 +6,37 @@ Este é um projeto React que utiliza a API de Rick and Morty para exibir informa
 
 O azs-web-rickandmorty é uma aplicação web desenvolvida com React que consome a API pública de Rick and Morty via GraphQL para apresentar dados da série de forma interativa e amigável.
 
+## Estrutura do Projeto
+
+A estrutura do projeto segue a seguinte organização:
+
+```
+rick-and-morty-app/
+├── src/
+│   ├── components/     # Componentes reutilizáveis
+|   |    ├──CharacterCard.css
+|   |    ├──CharacterCard.jss
+|   |    ├──EpisodeCard.css
+|   |    ├──EpisodeCard.jss
+|   |    ├──Header.css
+|   |    ├──Header.js
+|   |    ├──SearchBar.css
+|   |    ├──SearchBar.js
+│   ├── contexts/       # Contextos React para estado global
+|   |    ├──EpisodeContext.js
+│   ├── pages/          # Componentes de página
+|   |    ├──AllEpisodes.css
+|   |    ├──AllEpisodes.js
+|   |    ├──EpisodeDetail.css
+|   |    ├──EpisodeDetail.js
+|   |    ├──FavoriteEpisodes.css
+|   |    ├──FavoriteEpisodes.js
+│   ├── App.js          # Componente principal
+│   ├── App.css         # Estilos globais
+│   ├── apollo-client.js # Configuração do Apollo Client
+│   └── index.js        # Ponto de entrada
+```
+
 ## Demo
 
 O projeto está disponível online em: [https://azship-gustavost.vercel.app/](https://azship-gustavost.vercel.app/)
@@ -13,7 +44,7 @@ O projeto está disponível online em: [https://azship-gustavost.vercel.app/](ht
 ## Tecnologias Utilizadas
 
 - React
-- JavaScript/TypeScript
+- JavaScript
 - CSS
 - GraphQL
 - Apollo Client
