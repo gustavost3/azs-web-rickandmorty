@@ -1,26 +1,9 @@
 .wrapper {
     background-color: #141414;
     position: relative;
-    min-height: 100vh;
-    z-index: -2;
-}
-
-.wrapper::after {
-    content: "";
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 300px;
-    /* Ajuste o tamanho conforme necessário */
-    height: 300px;
-    /* Ajuste o tamanho conforme necessário */
     background-image: url('/public/rick.svg');
-    /* Substitua pelo caminho da sua imagem */
     background-repeat: no-repeat;
-    background-size: contain;
     background-position: bottom right;
-    z-index: -1;
-    pointer-events: none;
 
 }
 

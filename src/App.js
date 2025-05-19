@@ -6,6 +6,7 @@ import client from "./apollo-client";
 import Header from "./components/Header";
 import AllEpisodes from "./pages/AllEpisodes";
 import EpisodeDetail from "./pages/EpisodeDetail";
+import FavoriteEpisodes from "./pages/FavoriteEpisodes";
 import "./App.css";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Routes>
             <Route path="/" element={<AllEpisodes />} />
             <Route path="/episode/:id" element={<EpisodeDetail />} />
+            <Route path="/favorites" element={<FavoriteEpisodes />} />
           </Routes>
         </Router>
       </EpisodeProvider>
