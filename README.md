@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# azs-web-rickandmorty
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este é um projeto React que utiliza a API de Rick and Morty para exibir informações sobre personagens, episódios e locais do universo da série.
 
-## Available Scripts
+## Sobre o Projeto
 
-In the project directory, you can run:
+O azs-web-rickandmorty é uma aplicação web desenvolvida com React que consome a API pública de Rick and Morty via GraphQL para apresentar dados da série de forma interativa e amigável.
+
+## Demo
+
+O projeto está disponível online em: [https://azship-gustavost.vercel.app/](https://azship-gustavost.vercel.app/)
+
+## Tecnologias Utilizadas
+
+- React
+- JavaScript/TypeScript
+- CSS
+- GraphQL
+- Apollo Client
+- API Rick and Morty via GraphQL
+
+## Instalação
+
+Para instalar e executar este projeto localmente, siga os passos abaixo:
+
+```bash
+git clone https://github.com/seu-usuario/azs-web-rickandmorty.git
+```
+
+```bash
+cd azs-web-rickandmorty
+```
+
+```bash
+npm install
+```
+
+```bash
+npm start
+```
+
+A aplicação estará disponível em [http://localhost:3000](http://localhost:3000).
+
+## Funcionalidades
+
+- Visualização de personagens da série
+- Informações sobre episódios
+- Adiçao de episodios aos favoritos
+- Marcação de episodios como assistidos
+- Busca e filtragem de conteúdo
+
+## Scripts Disponíveis
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Executa a aplicação em modo de desenvolvimento.
+Abra [http://localhost:3000](http://localhost:3000) para visualizar no navegador.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Inicia o executor de testes no modo interativo.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Compila a aplicação para produção na pasta `build`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## API
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Este projeto utiliza a [Rick and Morty API](https://rickandmortyapi.com/graphql) para obter dados sobre a série.
 
-### `npm run eject`
+## Contribuição
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Contribuições são bem-vindas! Para contribuir:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/nova-funcionalidade`)
+3. Faça commit das suas alterações (`git commit -m 'Adiciona nova funcionalidade'`)
+4. Faça push para a branch (`git push origin feature/nova-funcionalidade`)
+5. Abra um Pull Request
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Licença
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Este projeto está licenciado sob a licença MIT - veja o arquivo LICENSE para mais detalhes.
 
-## Learn More
+## Contato
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Link do Projeto: [https://github.com/seu-usuario/azs-web-rickandmorty](https://github.com/seu-usuario/azs-web-rickandmorty)
