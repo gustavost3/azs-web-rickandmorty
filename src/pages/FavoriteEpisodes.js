@@ -20,17 +20,21 @@ const GET_EPISODES_BY_IDS = gql`
 `;
 
 const FavoriteEpisodes = () => {
-    const { favorites } = useEpisodeContext();
+    const { favorites, isLoaded } = useEpisodeContext();
     const [searchTerm, setSearchTerm] = useState("");
 
     const { loading, error, data } = useQuery(GET_EPISODES_BY_IDS, {
         variables: { ids: favorites },
-        skip: favorites.length === 0,
+        skip: !isLoaded || favorites.length === 0,
     });
 
     const handleSearch = (term) => {
         setSearchTerm(term);
     };
+
+    if (!isLoaded) {
+        return <div className="loading-message">Carregando favoritos...</div>;
+    }
 
     if (favorites.length === 0) {
         return (
@@ -48,7 +52,7 @@ const FavoriteEpisodes = () => {
         return <div className="loading-message">Buscando Episódios...</div>;
     if (error) return <div className="error-message">Erro: {error.message}</div>;
 
-    // Filter episodes based on search term
+
     const filteredEpisodes =
         data?.episodesByIds.filter((episode) =>
             episode.name.toLowerCase().includes(searchTerm.toLowerCase())

@@ -1,7 +1,6 @@
 import { ApolloClient, InMemoryCache, HttpLink, from } from "@apollo/client";
 import { setContext } from '@apollo/client/link/context';
 
-// Link para adicionar timestamp nas requisições
 const timestampLink = setContext((_, { headers }) => {
   return {
     headers: {
@@ -19,7 +18,6 @@ const cache = new InMemoryCache({
   typePolicies: {
     Episode: {
       fields: {
-        // Cache individual por episódio
         characters: {
           merge(existing, incoming) {
             return incoming;

@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useQuery, gql } from "@apollo/client";
+import { useLocation } from "react-router-dom";
 import EpisodeCard from "../components/EpisodeCard";
 import SearchBar from "../components/SearchBar";
 import "./AllEpisodes.css";
@@ -29,20 +30,30 @@ const GET_EPISODES = gql`
 const AllEpisodes = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [searchTerm, setSearchTerm] = useState("");
+    const location = useLocation();
+
+    useEffect(() => {
+        // Resetar apenas quando vier de uma navegação externa (não de busca interna)
+        setSearchTerm("");
+        setCurrentPage(1);
+    }, [location.key]); // location.key muda a cada navegação
 
     const { loading, error, data } = useQuery(GET_EPISODES, {
         variables: {
             page: currentPage,
             filter: searchTerm ? { name: searchTerm } : null,
         },
-        fetchPolicy: 'cache-first', // Usa cache primeiro, só faz request se não tiver
-        // ou
-        // fetchPolicy: 'cache-and-network', // Mostra cache e atualiza em background
     });
 
     const handleSearch = (term) => {
         setSearchTerm(term);
         setCurrentPage(1); // Volta o indicador para a primeira página ao realizar uma nova busca
+    };
+
+    //Função para limpar busca
+    const clearSearch = () => {
+        setSearchTerm("");
+        setCurrentPage(1);
     };
 
     const handleNextPage = () => {
@@ -69,6 +80,34 @@ const AllEpisodes = () => {
                 <div className="container">
                     <h1>Todos os Episódios</h1>
                     <SearchBar onSearch={handleSearch} />
+
+                    {/* ✅ ADICIONAR: Mostrar indicador de busca ativa */}
+                    {searchTerm && (
+                        <div className="search-info" style={{
+                            margin: '10px 0',
+                            padding: '10px',
+                            backgroundColor: '#f0f0f0',
+                            borderRadius: '5px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'space-between'
+                        }}>
+                            <span>Buscando por: "{searchTerm}"</span>
+                            <button
+                                onClick={clearSearch}
+                                style={{
+                                    padding: '5px 15px',
+                                    backgroundColor: '#007bff',
+                                    color: 'white',
+                                    border: 'none',
+                                    borderRadius: '3px',
+                                    cursor: 'pointer'
+                                }}
+                            >
+                                Mostrar todos
+                            </button>
+                        </div>
+                    )}
 
                     <div className="episode-list">
                         {data?.episodes?.results.map((episode) => (
@@ -100,7 +139,6 @@ const AllEpisodes = () => {
                 </div>
             </div>
         </>
-
     );
 };
 

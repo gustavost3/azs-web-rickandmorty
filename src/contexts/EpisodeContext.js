@@ -7,6 +7,7 @@ export const useEpisodeContext = () => useContext(EpisodeContext);
 export const EpisodeProvider = ({ children }) => {
   const [favorites, setFavorites] = useState([]);
   const [watched, setWatched] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   // Carregar dados do localStorage ao iniciar
   useEffect(() => {
@@ -15,16 +16,22 @@ export const EpisodeProvider = ({ children }) => {
 
     if (storedFavorites) setFavorites(JSON.parse(storedFavorites));
     if (storedWatched) setWatched(JSON.parse(storedWatched));
+
+    setIsLoaded(true);
   }, []);
 
-  // Salvar dados no localStorage quando mudam
+  // Salvar dados no localStorage quando mudam (só depois de carregar)
   useEffect(() => {
-    localStorage.setItem("favorites", JSON.stringify(favorites));
-  }, [favorites]);
+    if (isLoaded) {
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+    }
+  }, [favorites, isLoaded]);
 
   useEffect(() => {
-    localStorage.setItem("watched", JSON.stringify(watched));
-  }, [watched]);
+    if (isLoaded) {
+      localStorage.setItem("watched", JSON.stringify(watched));
+    }
+  }, [watched, isLoaded]);
 
   const toggleFavorite = (episodeId) => {
     setFavorites((prevFavorites) => {
@@ -54,6 +61,7 @@ export const EpisodeProvider = ({ children }) => {
       value={{
         favorites,
         watched,
+        isLoaded,
         toggleFavorite,
         toggleWatched,
         isFavorite,
