@@ -35,6 +35,9 @@ const AllEpisodes = () => {
             page: currentPage,
             filter: searchTerm ? { name: searchTerm } : null,
         },
+        fetchPolicy: 'cache-first', // Usa cache primeiro, só faz request se não tiver
+        // ou
+        // fetchPolicy: 'cache-and-network', // Mostra cache e atualiza em background
     });
 
     const handleSearch = (term) => {

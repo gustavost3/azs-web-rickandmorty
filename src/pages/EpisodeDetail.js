@@ -30,6 +30,7 @@ const EpisodeDetail = () => {
 
     const { loading, error, data } = useQuery(GET_EPISODE, {
         variables: { id },
+        fetchPolicy: 'cache-first', // Evita buscar o mesmo episódio repetidamente
     });
 
     if (loading)
